@@ -11,8 +11,6 @@ class App extends React.Component {
       monsters: [],
       searchField: ''
     };
-
-    this.handleChange = this.handleChange.bind(this);
   }
 
   componentDidMount() {
@@ -21,9 +19,7 @@ class App extends React.Component {
       .then(users => this.setState({ monsters: users }))
   }
 
-  handleChange(e) {
-    this.setState({ searchField: e.target.value });
-  }
+  handleChange = e => this.setState({ searchField: e.target.value });
 
   render() {
     const { monsters, searchField } = this.state;
